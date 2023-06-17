@@ -23,7 +23,7 @@ from sklearn import metrics
 
 """**Importing the database**"""
 
-database = pd.read_excel('https://github.com/MCAGoncalves/dataset/blob/main/Base_Apartment_Price.xlsx?raw=true')
+database = pd.read_excel('https://github.com/Gilisaabella/PCPRA3/raw/main/PCPRA3.xlsx')
 
 """**Database Information**"""
 
@@ -41,8 +41,8 @@ database.describe()
 
 """**Defining the dependent variable and the independent variables**"""
 
-X = database.drop(['Price'], axis=1)
-y = database['Price']
+X = database.drop(['Sales'], axis=1)
+y = database['Sales']
 
 """**Split data into training and testing**"""
 
@@ -116,7 +116,7 @@ plt.plot(y_pred_best, color='blue', linestyle='--', label='Prediction')
 plt.plot(y_test_best, color='orange', label='Test Set')
 plt.legend()
 plt.xlabel('Index')
-plt.ylabel('Price')
+plt.ylabel('Sales')
 plt.title(f'Comparasion between the best model ({type(models[best_model_index]).__name__}) and Test Set ')
 plt.show()
 
